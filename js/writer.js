@@ -1,6 +1,5 @@
 import { DOM_ADD_NOTE_BTN, DOM_BACK_BTN, DOM_TITLE, DOM_WRITER_TITLE, UserMessages } from "../lang/messages/en/user.js";
 import { Utils } from "./utils.js";
-import { Note } from "./note.js";
 import { NoteContainer } from "./notes-container.js";
 
 class WriterUI {
@@ -34,6 +33,6 @@ class WriterUI {
     }
 }
 
-const wNoteContainer = new NoteContainer();
+const wNoteContainer = new NoteContainer(true);
 const ui = new WriterUI(wNoteContainer);
 ui.init();

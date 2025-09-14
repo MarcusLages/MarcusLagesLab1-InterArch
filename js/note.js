@@ -10,24 +10,25 @@ export class Note {
     static NOTES_CARD_CLASS_CSS = "note_card";
     static REMOVE_BTN_CLASS_CSS = DOM_REMOVE_NOTE_BTN;
 
-    constructor(parent, disable = false, msg = "", onChange, onDelete) {
+    constructor(parent, msg = "", id, onChange, onDelete) {
+        // Random UID got from ChatGPT
+        this.id = id || crypto.randomUUID();
         this.parent = parent;
-        this.note = this.initNoteText(msg, disable, onChange);
+        this.note = this.initNoteText(msg, onChange);
         this.noteCard = this.initNoteCard();
         this.removeBtn = this.initRemoveBtn(onDelete);
         
         this.noteCard.appendChild(this.note);
         this.noteCard.appendChild(this.removeBtn);
 
-        this.parent.appendChild(this.noteCard);        
+        this.parent.appendChild(this.noteCard);
     }
 
-    initNoteText(msg, disable, onChange) {
+    initNoteText(msg, onChange) {
         let note = document.createElement(Note.NOTE_HTML);
         note.placeholder = UserMessages[DOM_NOTE_PLACEHOLDER];
         note.textContent = msg;
         note.className = Note.NOTE_CLASS_CSS;
-        note.disabled = disable;
 
         if(onChange) {
             note.addEventListener(Utils.ON_CHANGE_EVENT, () => onChange());
@@ -62,5 +63,25 @@ export class Note {
     setParent(parent) {
         this.parent = parent;
         this.parent.appendChild(this.noteCard);
+    }
+
+    enable() {
+        this.note.readOnly = false;
+    }
+
+    disable() {
+        this.note.readOnly = true;
+        this.noteCard.removeChild(this.removeBtn);
+    }
+
+    toJSON() {
+        return {
+            id: this.id,
+            text: this.note.value
+        };
+    }
+
+    static fromJSON(json, parent) {
+        return new Note(parent, json.text, json.id);
     }
 }

@@ -7,6 +7,9 @@ export const DOM_BACK_BTN = "back_btn";
 export const DOM_ADD_NOTE_BTN = "add_note_btn";
 export const DOM_REMOVE_NOTE_BTN = "remove_note_btn";
 export const DOM_NOTE_PLACEHOLDER = "default_btn_placeholder";
+export const DOM_LAST_SAVED = "last_saved";
+
+export const TAG_LAST_SAVED = "%TIME";
 
 export const UserMessages = {
     "title": "Lab 1: JSON, Object Constructor, localStorage e.g. Marcus V S Lages",
@@ -17,5 +20,6 @@ export const UserMessages = {
     "back_btn": "Back",
     "add_note_btn": "Add",
     "remove_note_btn": "Remove",
-    "default_btn_placeholder" : "Write a new note..."
+    "default_btn_placeholder" : "Write a new note...",
+    "last_saved": "Saved at: %TIME"
 };

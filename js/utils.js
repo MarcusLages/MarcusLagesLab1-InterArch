@@ -7,6 +7,7 @@ export class Utils {
     static ON_CHANGE_EVENT = "change";
     static ON_CLICK_EVENT = "click";
     static ON_UNLOAD_EVENT = "delete";
+    static ON_STORAGE_EVENT = "storage";
 
     static EMPTY_HTML = "";
 
