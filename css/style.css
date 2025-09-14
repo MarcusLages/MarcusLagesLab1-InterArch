@@ -1,0 +1,37 @@
+html {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+button {
+    margin: 0.5em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color:bisque;
+}
+
+.display_container {
+    margin: 0.5em;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.note_card {
+    display: flex;
+    width: 19em;
+    padding: 1em;
+    justify-content: space-between;
+    background-color: rgb(238, 240, 205);
+}
+
+.note_txt {
+    background-color:khaki;
+    width: 15em;
+    height: 10em;
+    resize: none;
+}
+
+.remove_note_btn {
+    /* Avoid growing vertically because of flex div */
+    align-self: center; 
+    background-color: rgb(255, 190, 175);
+}
