@@ -7,6 +7,9 @@ import { Utils } from "./utils.js";
  * Class responsible for handling the graphical and logical part of the 
  * container that stores and displays notes.
  * Connects to the NoteRepository to save, load and update notes.
+ * 
+ * ! DISCLAIMER: Chat GPT was used to give tips on the integration between
+ * !             NotesRepository and NoteContainer
  */
 export class NoteContainer {
 

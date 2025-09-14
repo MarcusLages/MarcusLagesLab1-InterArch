@@ -7,6 +7,9 @@ import { Utils } from "./utils.js";
  * last saved.
  * 
  * ! Use it as a Singleton
+ * 
+ * ! DISCLAIMER: Chat GPT was used to give tips on the integration between
+ * !             NotesRepository and NoteContainer
  */
 class NotesRepository {
 
