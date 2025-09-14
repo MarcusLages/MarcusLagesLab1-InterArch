@@ -1,3 +1,5 @@
+// Constants that represent the respective DOM's key to their
+// associated UserMessage.
 export const DOM_TITLE = "title";
 export const DOM_READER_BTN = "reader_btn";
 export const DOM_READER_TITLE = "reader_title";
@@ -9,6 +11,7 @@ export const DOM_REMOVE_NOTE_BTN = "remove_note_btn";
 export const DOM_NOTE_PLACEHOLDER = "default_btn_placeholder";
 export const DOM_LAST_SAVED = "last_saved";
 
+// Constants used to format/replace a certain message before the DOM is edited
 export const TAG_LAST_SAVED = "%TIME";
 
 export const UserMessages = {

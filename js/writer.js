@@ -2,6 +2,7 @@ import { DOM_ADD_NOTE_BTN, DOM_BACK_BTN, DOM_TITLE, DOM_WRITER_TITLE, UserMessag
 import { Utils } from "./utils.js";
 import { NoteContainer } from "./notes-container.js";
 
+// Linked to writer.html and responsible to UI logic of the page
 class WriterUI {
 
     static DOM_NOTE_CONTAINER = "notes_container";

@@ -2,6 +2,7 @@ import { DOM_BACK_BTN, DOM_LAST_SAVED, DOM_READER_TITLE, DOM_TITLE, UserMessages
 import { NoteContainer } from "./notes-container.js";
 import { Utils } from "./utils.js";
 
+// Linked to reader.html and responsible to UI logic of the page
 class ReaderUI {
 
     static DOM_NOTE_CONTAINER = "notes_container";

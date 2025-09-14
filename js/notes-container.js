@@ -3,6 +3,11 @@ import noteRepo from "./note-repository.js";
 import { Note } from "./note.js";
 import { Utils } from "./utils.js";
 
+/**
+ * Class responsible for handling the graphical and logical part of the 
+ * container that stores and displays notes.
+ * Connects to the NoteRepository to save, load and update notes.
+ */
 export class NoteContainer {
 
     static NOTE_CONTAINER_HTML = "div";
@@ -14,8 +19,8 @@ export class NoteContainer {
         this.lastSaved = document.getElementById(DOM_LAST_SAVED);
         this.lastSaved.textContent = UserMessages[DOM_LAST_SAVED]
             .replace(TAG_LAST_SAVED, this.noteRepo.lastSaved);
-        this.parent = null;
         this.isWriter = isWriter;
+        this.parent = null;
 
         if(parent) {
             this.setParent(parent);
@@ -60,11 +65,18 @@ export class NoteContainer {
         this.noteRepo.add(note);
     }
 
-    displayNotes(notes) {
+    /**
+     * Displays the content given in the array of json objects.
+     * Objects should contain necessary information to create a displayable
+     * Note using Note.fromJSON().
+     * 
+     * @param {Array[object]} notesJson 
+     */
+    displayNotes(notesJson) {
         this.noteContainer.innerHTML = Utils.EMPTY_HTML;
         this.lastSaved.textContent = UserMessages[DOM_LAST_SAVED]
             .replace(TAG_LAST_SAVED, this.noteRepo.lastSaved);
-        notes.forEach(json => {
+        notesJson.forEach(json => {
             const note = Note.fromJSON(json, this.noteContainer);
             this.initNewNote(note);
             note.setParent(this.noteContainer);

@@ -1,6 +1,7 @@
 import { DOM_READER_BTN, DOM_TITLE, DOM_WRITER_BTN, UserMessages } from "../lang/messages/en/user.js";
 import { Utils } from "./utils.js";
 
+// Linked to index.html and responsible to UI logic of the page
 class IndexUI {
     constructor() {
         this.title = document.getElementById(DOM_TITLE);

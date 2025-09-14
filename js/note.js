@@ -36,6 +36,7 @@ export class Note {
         return note;
     }
     
+    // Initialize notecard that contains note and remove button.
     initNoteCard() {
         let noteCard = document.createElement(Note.NOTE_CARD_HTML);
         noteCard.className = Note.NOTES_CARD_CLASS_CSS;
@@ -52,10 +53,12 @@ export class Note {
         return removeBtn;
     }
 
+    // Adds event listener
     addOnChange(onChange) {
         this.note.addEventListener(Utils.ON_CHANGE_EVENT, () => onChange());
     }
-
+    
+    // Adds event listener
     addOnDelete(onDelete) {
         this.removeBtn.addEventListener(Utils.ON_CLICK_EVENT, () => onDelete());
     }
@@ -74,6 +77,11 @@ export class Note {
         this.noteCard.removeChild(this.removeBtn);
     }
 
+    /**
+     * Serializes object to JSON.
+     * 
+     * @returns JSON object with `id` and `text` keys.
+     */
     toJSON() {
         return {
             id: this.id,
@@ -81,6 +89,14 @@ export class Note {
         };
     }
 
+    /**
+     * Initializes a viewable Note from JSON. JSON must contain
+     * `id` and `text` keys.
+     * 
+     * @param {json} json 
+     * @param {HTMLElement} parent 
+     * @returns 
+     */
     static fromJSON(json, parent) {
         return new Note(parent, json.text, json.id);
     }

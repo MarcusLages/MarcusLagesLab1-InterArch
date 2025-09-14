@@ -11,7 +11,7 @@ export class Utils {
 
     static EMPTY_HTML = "";
 
-    static goTo(pageName) {
-        window.location.href = pageName;
+    static goTo(filepath) {
+        window.location.href = filepath;
     }
 }
